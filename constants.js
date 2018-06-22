@@ -1,15 +1,15 @@
 // @flow
 import * as d3 from 'd3'
 
-export type TrackId = 'MOBILE' | 'WEB_CLIENT' | 'FOUNDATIONS' | 'SERVERS' |
+export type TrackId = 'TOOLS' | 'PROGRAMMING_PARADIGMS' | 'FOUNDATIONS' | 'SERVERS' |
   'PROJECT_MANAGEMENT' | 'COMMUNICATION' | 'CRAFT' | 'INITIATIVE' |
   'CAREER_DEVELOPMENT' | 'ORG_DESIGN' | 'WELLBEING' | 'ACCOMPLISHMENT' |
   'MENTORSHIP' | 'EVANGELISM' | 'RECRUITING' | 'COMMUNITY'
-export type Milestone = 0 | 1 | 2 | 3 | 4 | 5
+export type Milestone = 0 | 1 | 2 | 3 | 4
 
 export type MilestoneMap = {
-  'MOBILE': Milestone,
-  'WEB_CLIENT': Milestone,
+  'TOOLS': Milestone,
+  'PROGRAMMING_PARADIGMS': Milestone,
   'FOUNDATIONS': Milestone,
   'SERVERS': Milestone,
   'PROJECT_MANAGEMENT': Milestone,
@@ -25,7 +25,7 @@ export type MilestoneMap = {
   'RECRUITING': Milestone,
   'COMMUNITY': Milestone
 }
-export const milestones = [0, 1, 2, 3, 4, 5]
+export const milestones = [0, 1, 2, 3, 4]
 
 export const milestoneToPoints = (milestone: Milestone): number => {
   switch (milestone) {
@@ -34,7 +34,6 @@ export const milestoneToPoints = (milestone: Milestone): number => {
     case 2: return 3
     case 3: return 6
     case 4: return 12
-    case 5: return 20
     default: return 0
   }
 }
@@ -71,8 +70,8 @@ export type Track = {
 }
 
 type Tracks = {|
-  'MOBILE': Track,
-  'WEB_CLIENT': Track,
+  'TOOLS': Track,
+  'PROGRAMMING_PARADIGMS': Track,
   'FOUNDATIONS': Track,
   'SERVERS': Track,
   'PROJECT_MANAGEMENT': Track,
@@ -89,17 +88,18 @@ type Tracks = {|
   'COMMUNITY': Track
 |}
 
+
 export const tracks: Tracks = {
-  "MOBILE": {
-    "displayName": "Mobile",
+  "TOOLS": {
+    "displayName": "Tools, technologies and trends",
     "category": "A",
-    "description": "Develops expertise in native mobile platform engineering, such as iOS or Android",
+    "description": "Conocimiento de las herramientas de desarrollo y las tendencias de desarrollo de software en el mundo",
     "milestones": [{
-      "summary": "Works effectively within established iOS or Android architectures, following current best practices",
+      "summary": "Conoce las herramientas de versionado de código, manejo de dependencias, IDE y utilidades del sistema operativo.",
       "signals": [
-        "Delivers features requiring simple local modifications",
-        "Adds simple actions that call server endpoints",
-        "Reuses existing components appropriately",
+        "Ha usado git",
+        "Maneja con fluidez su IDE de expertise",
+        "No necesita ayuda en general para el manejo de su SO de trabajo",
       ],
       "examples": [
         "Added existing button to a different iOS surface",
@@ -107,11 +107,11 @@ export const tracks: Tracks = {
         "Fetched and displayed a new stream, using existing stream item styles",
       ],
     }, {
-      "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
+      "summary": "Manejo fluido de herramientas de versionado de código, manejo de dependencias, IDE. Conocimiento básico de docker",
       "signals": [
-        "Defines new useful and appropriate proto-generated objects",
-        "Creates simple new activities on Android",
-        "Migrates code from old patterns to new patterns",
+        "Maneja git con soltura, de manera independiente",
+        "Maneja el sistema de dependencias de sus proyectos sin problemas",
+        "Usa las features basicas de docker para ejecutar containers (pull, run, build)",
       ],
       "examples": [
         "Upgraded SDWebImage to a new major version",
@@ -119,11 +119,11 @@ export const tracks: Tracks = {
         "Prototyped a simple new feature quickly",
       ],
     }, {
-      "summary": "Designs major new features and demonstrates a nuanced understanding of mobile platform constraints",
+      "summary": "Conocimiento de tendencias y manejo avanzado de herramientas",
       "signals": [
-        "Implements complex features with a large product surface area",
-        "Works effectively with  Android reactive programming framework",
-        "Adds support for new iOS features after a major iOS version upgrade",
+        "Sabe sobre las tendencias de las plataforma en la que es especialista",
+        "Aplica su conocimiento a las tendencias en posibles casos de uso",
+        "Esta familiarizado con docker, arma stacks con docker compose",
       ],
       "examples": [
         "Designed iOS caching strategy for offline reading",
@@ -131,42 +131,29 @@ export const tracks: Tracks = {
         "Informed the team about recent best practice changes and deprecations",
       ],
     }, {
-      "summary": "Builds complex, reusable architectures that pioneer best practices and enable engineers to work more effectively",
+      "summary": "Conocimiento general de tendencias y manejo avanzado de herramientas de desarrollo",
       "signals": [
-        "Pioneers architecture migration strategies that reduce programmer burden",
-        "Fixes subtle memory management issues",
-        "Implements interactive dismissals that bring delight",
+        "Sigue las tendencias sobre desarrollo de software y no solo se enfoca en su especialidad/plataforma",
+        "Inclusion de tecnologias basada en casos de uso exitosos",
+        "Excelente manejo de las herramientas de desarrollo",
       ],
       "examples": [
         "Upgraded CocoaPods to a new major version",
         "Designed architecture for fetching and rendering stream items",
         "Migrated Android persistance layer to reactive programming",
       ],
-    }, {
-      "summary": "Is an industry-leading expert in mobile engineering or sets strategic mobile direction for an eng team",
-      "signals": [
-        "Defines long-term goals and ensures active projects are in service of them",
-        "Designs and builds innovative, industry-leading UI interactions",
-        "Invents new techniques to responsibly stretch limits of the Android platform",
-      ],
-      "examples": [
-        "Defined and drove complete migration plan to Swift or Kotlin",
-        "Implemented Android recycler views before platform support existed",
-        "Pioneered application-level abstractions for multi-app environment",
-      ],
     }],
   },
 
-  "WEB_CLIENT": {
-    "displayName": "Web client",
+  "PROGRAMMING_PARADIGMS": {
+    "displayName": "Programming Paradigms",
     "category": "A",
-    "description": "Develops expertise in web client technologies, such as HTML, CSS, and JavaScript",
+    "description": "Conocimiento de los paradigmas de programación no solamente a nivel teórico sino que aplica los mismos en el momento y situación adecuados",
     "milestones": [{
-      "summary": "Works effectively within established web client architectures, following current best practices",
+      "summary": "OOP basico",
       "signals": [
-        "Makes minor modifications to existing screens",
-        "Fixes simple design quality issues",
-        "Uses CSS appropriately, following style guide",
+        "Conoce los conceptos de encapsulamiento, polimorfismo y herencia",
+        "Usa los conceptos de cohesión y acoplamiento a la hora de modelar adecuadamente en objetos"
       ],
       "examples": [
         "Implemented sticky footer on the post page",
@@ -174,11 +161,11 @@ export const tracks: Tracks = {
         "Built PaymentHistory screen using ResponseScreen",
       ],
     }, {
-      "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
+      "summary": "Modelado en OOP",
       "signals": [
-        "Makes sensible abstractions based on template and code patterns",
-        "Specs and builds interactive components independently",
-        "Prototypes simple new features quickly",
+        "Modela sistemas de punta a punta usando el paradigma orientado a objetos, aplicando los criterios mencionados en el nivel anterior y minimizando el sobrediseño.",
+        "Conoce los conceptos de encapsulamiento, polimorfismo y herencia",
+        "Sabe cuándo se debe aplicar la composición en favor de la herencia."
       ],
       "examples": [
         "Built credit card input component",
@@ -186,7 +173,7 @@ export const tracks: Tracks = {
         "Built modal system",
       ],
     }, {
-      "summary": "Designs major new features and demonstrates a nuanced understanding of browser constraints",
+      "summary": "Manejo de programacion funcional",
       "signals": [
         "Provides useful design feedback and suggests feasible alternatives",
         "Performs systemic tasks to significantly minimise bundle size",
