@@ -1,7 +1,7 @@
 // @flow
 import * as d3 from 'd3'
 
-export type TrackId = 'TOOLS' | 'PROGRAMMING_PARADIGMS' | 'FOUNDATIONS' | 'SERVERS' |
+export type TrackId = 'TOOLS' | 'PROGRAMMING_PARADIGMS' | 'SOLID' | 'TESTING_TDD' |
   'PROJECT_MANAGEMENT' | 'COMMUNICATION' | 'CRAFT' | 'INITIATIVE' |
   'CAREER_DEVELOPMENT' | 'ORG_DESIGN' | 'WELLBEING' | 'ACCOMPLISHMENT' |
   'MENTORSHIP' | 'EVANGELISM' | 'RECRUITING' | 'COMMUNITY'
@@ -10,8 +10,8 @@ export type Milestone = 0 | 1 | 2 | 3 | 4
 export type MilestoneMap = {
   'TOOLS': Milestone,
   'PROGRAMMING_PARADIGMS': Milestone,
-  'FOUNDATIONS': Milestone,
-  'SERVERS': Milestone,
+  'SOLID': Milestone,
+  'TESTING_TDD': Milestone,
   'PROJECT_MANAGEMENT': Milestone,
   'COMMUNICATION': Milestone,
   'CRAFT': Milestone,
@@ -73,7 +73,7 @@ type Tracks = {|
   'TOOLS': Track,
   'PROGRAMMING_PARADIGMS': Track,
   'FOUNDATIONS': Track,
-  'SERVERS': Track,
+  'TESTING_TDD': Track,
   'PROJECT_MANAGEMENT': Track,
   'COMMUNICATION': Track,
   'CRAFT': Track,
@@ -211,10 +211,10 @@ export const tracks: Tracks = {
     }],
   },
 
-  "FOUNDATIONS": {
-    "displayName": "Foundations",
+  "SOLID": {
+    "displayName": "SOLID, Clean Code & Refactors",
     "category": "A",
-    "description": "Develops expertise in foundational systems, such as deployments, pipelines, databases and machine learning",
+    "description": "Knows about the existence of SOLID, Clean Code & Refactors",
     "milestones": [{
       "summary": "Works effectively within established structures, following current best practices",
       "signals": [
@@ -228,11 +228,12 @@ export const tracks: Tracks = {
         "Resolved out of disk errors independently",
       ],
     }, {
-      "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
+      "summary": "Introductory application of foundational coding practices",
       "signals": [
-        "Made minor version upgrades to technologies",
-        "Builds machine learning jobs within the ML framework",
-        "Triages service issues correctly and independently",
+        "Aplica SOLID",
+        "Conoce algunas técnicas para escribir clean code",
+        "Detecta posibilidades de mejora en el código y conoce algunas técnicas de refactoring",
+        "No posee los conocimientos para poder realizar refactors de gran escala, ni estrategias para encarar el mismo"
       ],
       "examples": [
         "Upgraded NodeJS from 8.0 to 8.1.1",
@@ -240,11 +241,11 @@ export const tracks: Tracks = {
         "Improved ETL efficiency by improving Dynamo to S3 loading",
       ],
     }, {
-      "summary": "Designs standalone systems of moderate complexity, or major new features in existing systems",
+      "summary": "Mastery of foundational coding practices",
       "signals": [
-        "Acts as primary maintainer for existing critical systems",
-        "Designs moderately complex systems",
-        "Makes major version upgrades to libraries",
+        "Domina SOLID",
+        "Escribe código de una forma elegante y simple",
+        "Domina técnicas para realizar refactors de gran escala por ejemplo dividiendo en refactors pequeños por funcionalidad",
       ],
       "examples": [
         "Designed Ansible configuration management",
@@ -252,42 +253,28 @@ export const tracks: Tracks = {
         "Designed flexible framework for writing machine learning jobs",
       ],
     }, {
-      "summary": "Builds complex, reusable architectures that pioneer best practices for other engineers, or multi-system services",
+      "summary": "Full proficiency with foundational coding practices",
       "signals": [
-        "Designs complex projects that encompass multiple systems and technologies",
-        "Demonstrates deep knowledge of foundational systems",
-        "Introduces new databases and technologies to meet underserved needs",
+        "Domina por completo las técnicas de SOLID, Refactoring y Clean Code", 
+        "Transfiere con confianza y facilidad las mismas"
       ],
       "examples": [
         "Designed and built BBFD",
         "Designed AWS configuration management",
         "Introduced Kinesis and pioneered streaming events pipeline",
       ],
-    }, {
-      "summary": "Is an industry-leading expert in foundational engineering or sets strategic foundational direction for an eng team",
-      "signals": [
-        "Designs transformational projects in service of long-term goals",
-        "Defines the strategic vision for foundational work and supporting technologies",
-        "Invents industry-leading techniques to solve complex problems",
-      ],
-      "examples": [
-        "Invented a novel ML technique that advanced the state of the art",
-        "Defined and developed Medium's continuous delivery strategy",
-        "Developed and implemented HA strategy",
-      ],
     }],
   },
 
-  "SERVERS": {
-    "displayName": "Servers",
+  "TESTING_TDD": {
+    "displayName": "Testing & TDD",
     "category": "A",
-    "description": "Develops expertise in server side engineering, using technologies such as Go, NodeJS, or Scala",
+    "description": "Técnicas relacionadas a construir software robusto que tenga alta cobertura de testing. Herramientas de diseño de software modular, guiadas por pruebas.",
     "milestones": [{
-      "summary": "Works effectively within established server side frameworks, following current best practices",
+      "summary": "Basic knowledge of techniques and practices",
       "signals": [
-        "Adds NodeJS endpoints using layers architecture",
-        "Adds golang endpoints using Gotham architecture",
-        "Makes minor server changes to support client needs",
+        "Conoce qué es testing, qué tipos existen (unit, integration, acceptance, smoke, exploratory) y cual es la diferencia entre cada uno", 
+        "Conoce qué es TDD y lo aplicó alguna vez. Sabe cuáles son los pasos de la técnica (Red, Green, Refactor). "
       ],
       "examples": [
         "Added IFTTT trigger for new bookmark to medium2",
@@ -295,11 +282,13 @@ export const tracks: Tracks = {
         "Queried a Dynamo LSI appropriately",
       ],
     }, {
-      "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
+      "summary": "Applies techniques and practices ",
       "signals": [
-        "Assesses correctness and utility of existing code and avoids blind copy-pasting",
-        "Generalizes code when appropriate",
-        "Determines data needs from product requirements",
+        "Utiliza TDD como técnica de desarrollo en los proyectos en que participa",
+        "Diseña tests con scope reducido para no detener el ciclo de TDD y mantener el desarrollo de forma iterativa", 
+        "Entiende que los tests funcionan como la documentación de los casos de uso y procura usar nombres claros para que sea muy fácil de entender el propósito de cada test",
+        "Conoce la pirámide de testing y entiende la importancia de la misma.",
+        "Sabe usar todos los dobles de test (mock, spy, stub, fake, dummy) cuando y donde corresponde"
       ],
       "examples": [
         "Identified need for new index on Dynamo",
