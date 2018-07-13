@@ -296,11 +296,13 @@ export const tracks: Tracks = {
         "Updated Facebook API version and codebase dependencies",
       ],
     }, {
-      "summary": "Designs standalone systems of moderate complexity, or major new features in existing systems",
+      "summary": "Deep knowledge and advanced application of practices",
       "signals": [
-        "Acts as primary maintainer for existing critical systems",
-        "Integrates third party services effectively",
-        "Writes playbooks for new service maintenance",
+        "Conoce los dos estilos de TDD (mockist/classicist) y sabe cuando usar uno u otro",
+        "Utiliza la técnica de triangulación al escribir tests para poder iterar de una forma más rápida",
+        "Entiende que TDD es una herramienta de diseño: permite detectar código muerto y clases con demasiadas responsabilidades",
+        "Evita la cobertura redundante (duplicación de tests sobre un caso de uso desde distintas capas) y los tests paranoicos",
+        "Entiende que la cobertura de tests es importante, siempre que apunte a cubrir los casos de uso (el core de la aplicación) y la integración con proveedores externos (delivery, bases de datos, servicios externos)"
       ],
       "examples": [
         "Implemented Google Auth login to Medium",
